@@ -2,6 +2,7 @@
 
 Next-generation exploit orchestrator for CVE-2026-109618/619 — adds Cloudflare WAF bypass, flexible target specification (URL/host/port/path/batch), multi-format output (JSON/CSV/table), resume capability, and lab automation (Docker restart). Authored by TESTERXMA.
 
+"If you like this project, please consider giving it a star on GitHub. Your support means a lot to me and motivates me"
 
 **Author:** TESTERXMA  
 **CVEs:** CVE-2026-109618, CVE-2026-109619 (php2shell)  
