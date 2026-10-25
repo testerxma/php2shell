@@ -207,4 +207,3 @@ https://lab.example.com:443/vuln.php        FAILED     8.3.12     none       FAI
 ## Changelog
 
 - **v2.0** (TESTERXMA): Cloudflare WAF bypass, batch mode, custom targets, resume, multi-format output
-- **v1.0**: Original php2shell orchestration
