@@ -89,10 +89,6 @@ LEAK_SPEC = "G:511:0x137" × 14 + "G:400:0x137" + "G:511:0x137" + "X:900"
 
 ## Integration Files
 
-### New Files Created
-1. **`/home/kali/Desktop/php2shell/exploit_enhanced_aslr.py`** - Main enhanced exploit with full ASLR bypass integration
-2. **`/home/kali/Desktop/php2shell/ASLR_BYPASS_INTEGRATION.md`** - This documentation
-
 ### Key Classes/Functions Added
 | Component | Purpose |
 |-----------|---------|
