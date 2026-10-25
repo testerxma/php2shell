@@ -3,6 +3,7 @@
 **Author:** TESTERXMA  
 **CVEs:** CVE-2026-109618, CVE-2026-109619 (php2shell)  
 
+"""""If you like this project, please consider giving it a star on GitHub! Your support means a lot to me and motivates me"""""
 ---
 
 ##  Overview
