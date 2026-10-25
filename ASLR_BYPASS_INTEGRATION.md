@@ -137,33 +137,6 @@ python3 exploit_enhanced_aslr.py --url http://target --aslr-bypass --workers 150
 
 ---
 
-## Verification Checklist
-
-After running with `--aslr-bypass`, check output for:
-- [ ] `Worker pinning (N holders)` message
-- [ ] `Chunked encoding enabled` message  
-- [ ] `B1 Heap Leak` attempt
-- [ ] `Leaked libphp base: 0x...` 
-- [ ] `Leaked main chunk base: 0x...`
-- [ ] `Using leaked zif_system: 0x...`
-- [ ] Final RCE success
-
----
-
-## Files Referenced from Source Repo
-| File | Purpose |
-|------|---------|
-| `exploit.py` | Main orchestration, hold_workers(), run_chain() |
-| `pure/mk_leak_b.py` | LEAK_SPEC, forge_value(), parse_leak logic |
-| `pure/chunked_send.py` | Chunked encoding delivery |
-| `pure/cheap_oom_a.py` | A2 cheap-OOM payload generation |
-| `pure/fake_ref_b.py` | B2 fake reference spray |
-| `pure/mk_a1.py` | A1 OOM payload generation |
-| `pure/mk_ht.py` | B2 fake HT (zend_array) generation |
-| `pure/mk_flood.py` | Flood value generation |
-| `RESEARCH_PURE_128M.md` | Technical documentation |
-
----
 
 ## Attribution
 All ASLR bypass techniques sourced from **php2shell-bypass-aslr-exp** by **9bie** (GitHub).
