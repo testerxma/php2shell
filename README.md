@@ -193,7 +193,6 @@ https://lab.example.com:443/vuln.php        FAILED     8.3.12     none       FAI
 ## Requirements
 
 - Python 3.8+
-- Original php2shell_core.py and pure/ modules in same directory
 - Network access to target
 
 ---
