@@ -8,26 +8,26 @@ Next-generation exploit orchestrator for CVE-2026-109618/619 — adds Cloudflare
 
 ---
 
-## 🎯 Overview
+##  Overview
 
 Unified exploit orchestrator for **CVE-2026-109618/619** (php2shell - PHP session.upload_progress UAF RCE) with integrated **ASLR bypass techniques**
 
-### 🎯 Target Vulnerability
+###  Target Vulnerability
 - **CVE-2026-109618/619**: PHP session.upload_progress use-after-free RCE
 - **Affected**: PHP 8.0.x (< 8.0.30), 8.1.x (< 8.1.42), 8.2.x (< 8.2.35), 8.3.x (< 8.3.36), 8.4.x (< 8.4.27)
 - **Vector**: `session.upload_progress` + `multipart/form-data` + `PHP_SESSION_UPLOAD_PROGRESS`
 
 ---
 
-## 🚀 Features
+##  Features
 
-### 🎯 Core Exploit (CVE-2026-109618/619)
+###  Core Exploit (CVE-2026-109618/619)
 - **A1**: END-cleanup `send_cookie` OOM → dangling `PS(id)` / `PS(mod_data)`
 - **B1**: Stale-id OOB read → heap leak (libphp + main chunk base)
 - **A2**: Cheap-OOM → dangling `PS(http_session_vars)`
 - **B2**: Fake reference + fake `zend_array` → `pDestructor = zif_system` → RCE
 
-### 🛡️ ASLR Bypass Techniques (from 9bie's php2shell-bypass-aslr-exp)
+###  ASLR Bypass Techniques (from 9bie's php2shell-bypass-aslr-exp)
 | Technique | Description |
 |-----------|-------------|
 | **Worker Pinning** | Holds N-1 workers (149/150) to force same Apache child |
@@ -36,20 +36,20 @@ Unified exploit orchestrator for **CVE-2026-109618/619** (php2shell - PHP sessio
 | **Leak Analysis** | `parse_leak()` with bucket analysis & `MAIN_BUCKET_COUNT=87` fingerprint |
 | **Offset Profiles** | x86_64 & aarch64 specific offsets (`dtor_offset`, `zif_offset`) |
 
-### ☁️ Cloudflare WAF Bypass
+###  Cloudflare WAF Bypass
 - Header obfuscation (X-Forwarded-For, CF-Connecting-IP spoofing)
 - Chunked encoding / slowloris fragmentation
 - Parameter pollution (duplicate headers, case variation)
 - Encoding bypass (URL encoding, double encoding, Unicode)
 - HTTP method override / Cookie manipulation
 
-### 🐚 Reverse Shell Manager
+###  Reverse Shell Manager
 - 23 payload types (bash, python3, php, perl, nc, socat, powershell, etc.)
 - Auto-listener (nc) in new terminal / tmux / screen / background
 - TTY upgrade (pty.spawn, stty raw, TERM=xterm-256color)
 - Interactive session with TTY support
 
-### 🎯 Target & Lab Features
+###  Target & Lab Features
 - Flexible targeting: `--url`, `--host/--port/--path`, `--batch` files
 - Custom headers (`-H`), batch scanning, resume capability
 - Docker restart (`--restart container_name`)
@@ -57,7 +57,7 @@ Unified exploit orchestrator for **CVE-2026-109618/619** (php2shell - PHP sessio
 
 ---
 
-## 📦 Installation
+##  Installation
 
 ```bash
 # Requirements
@@ -71,7 +71,7 @@ chmod +x /usr/local/bin/php2shell
 
 ---
 
-## 🚀 Quick Start
+##  Quick Start
 
 ```bash
 # 1. Basic exploit (ASLR bypass enabled)
@@ -89,7 +89,7 @@ python3 exploit.py --url http://target --aslr-bypass --workers 150 --leak-analys
 
 ---
 
-## 🎯 Usage Examples
+##  Usage Examples
 
 ### Basic Exploit
 ```bash
@@ -237,7 +237,7 @@ python3 exploit.py --batch targets.txt --aslr-bypass --format table
 
 ---
 
-## 🔧 ASLR Bypass Technical Details
+##  ASLR Bypass Technical Details
 
 ### Worker Pinning
 ```bash
@@ -278,7 +278,7 @@ python3 exploit.py --batch targets.txt --aslr-bypass --format table
 
 ---
 
-## 🐚 Reverse Shell Payloads (23 Types)
+##  Reverse Shell Payloads (23 Types)
 
 | Category | Types |
 |----------|-------|
@@ -301,7 +301,7 @@ python3 exploit.py --list-shells
 
 ---
 
-## 📤 Output Formats
+##  Output Formats
 
 ```bash
 # JSON (default)
@@ -316,7 +316,7 @@ python3 exploit.py --batch targets.txt --format table
 
 ---
 
-## 📁 Output Structure
+##  Output Structure
 
 ```json
 {
@@ -357,9 +357,9 @@ python3 exploit.py --batch targets.txt --format table
 
 ---
 
-## ⚠️ Legal & Ethics
+##  Legal & Ethics
 
-> **⚠️ AUTHORIZED USE ONLY**
+> **⚠️ ⚠️ AUTHORIZED USE ONLY ⚠️ ⚠️**
 > 
 > This tool is for **authorized vulnerability research and reproduction only**.
 > Only use against systems you own or have explicit written permission to test.
@@ -370,11 +370,11 @@ python3 exploit.py --batch targets.txt --format table
 ---
 
 
-## 👤 Author
+##  Author
 
 **TESTERXMA**  
 ---
 
-## 📄 License
+##  License
 
 For authorized security research only. See LICENSE file if applicable.
