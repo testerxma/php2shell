@@ -164,7 +164,7 @@ python3 exploit.py --batch targets.txt --aslr-bypass --format table
 
 ---
 
-## ⚙️ Command Reference
+##  Command Reference
 
 ### Target Specification
 | Option | Description |
