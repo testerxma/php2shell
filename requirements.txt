@@ -1,0 +1,1 @@
+# No third-party deps; stdlib only (socket/ssl).
